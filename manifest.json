@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "LY_Cannot_Stop_Learning",
+	"version": "1.0.2",
+	"description": "阻止弹框",
+	"icons":
+	{
+		"16": "img/icon.jpeg",
+		"48": "img/icon.jpeg",
+		"128": "img/icon.jpeg"
+	},
+	"background":
+	{
+		"scripts": ["js/background.js"]
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["http://yhdjypt.szxc.gov.cn/*", "https://yhdjypt.szxc.gov.cn/*"],
+			"js": ["js/content.js"]
+		}
+    ],
+    "page_action":
+    {
+        "default_icon": "img/icon.jpeg"
+    },
+	"permissions":
+	[
+        "declarativeContent",
+		"contextMenus",
+		"tabs"
+	],
+	"web_accessible_resources": ["js/inject.js"]
+}
